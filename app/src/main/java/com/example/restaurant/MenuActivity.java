@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class MenuActivity extends AppCompatActivity implements MenuItemsRequests.Callback {
 
-    ListView listView = findViewById(R.id.menuView);
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,8 @@ public class MenuActivity extends AppCompatActivity implements MenuItemsRequests
         // Get the menu items using the MenuItemsRequests class
         MenuItemsRequests x = new MenuItemsRequests(this, category);
         x.getMenuItems(this);
+
+        listView = findViewById(R.id.menuView);
 
         // If the listView is clicked go to CategoryClickListener
         listView.setOnItemClickListener(new MenuItemClickListener());

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class CategoriesActivity extends AppCompatActivity implements CategoriesRequest.Callback {
 
     // Create an instance of listview
-    ListView listView = findViewById(R.id.listView);
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,8 @@ public class CategoriesActivity extends AppCompatActivity implements CategoriesR
         // Get categories using the CategoriesRequest class
         CategoriesRequest x = new CategoriesRequest(this);
         x.getCategories(this);
+
+        listView = findViewById(R.id.listView);
 
         // If the listView is clicked go to CategoryClickListener
         listView.setOnItemClickListener(new CategoryClickListener());

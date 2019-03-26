@@ -29,7 +29,5 @@ public class MenuItemActivity extends AppCompatActivity {
         priceView.setText("\u20ac" + String.valueOf(menuItem.getPrice()));
         descriptionView.setText(menuItem.getDescription());
         Picasso.with(this).load(menuItem.getImageUrl()).into(imageView);
-
-
     }
 }
